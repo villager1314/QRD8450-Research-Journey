@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.so
+*.so.*
+*.img
+*.bin
+*.ko
+*.apk
+*.zip
+*.tar*
+*.before-a730-patch
+*.a730-tmp
+.env
+raw-logs/
+private/
