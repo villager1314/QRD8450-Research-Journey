@@ -26,8 +26,15 @@
 - 找到 WAYLAND_DISPLAY 的错误注入来源，验证重启持久性。
 - 将 GPU 上下文测试扩展为实际绘制、DMA-BUF 共享及稳定性验证。
 - 独立调查 Mobile 快捷设置与键盘配置。
-- 归档启动层、模块和 Recovery 的只读采集结果。
+- 补齐启动层和模块的剩余证据、Recovery 只读采集；已有 Boot 样本、布局与日志见对应补录。
 
 ## 2026-10-29：历史会话补录
 
 复核 10 月 23 日相关会话，补充 ABL/UEFI 离线分析、Gunyah 厂商 VM 路径、模块布局比较、`init_user_ns` 加载失败及 KernelSU 日志线索。TWRP 尚缺构建与启动证据，云端任务未完成核查。详见[证据索引与检索边界](history-evidence.md)。
+
+## 2026-10-29：原始材料补查
+
+- 直接核验指定 `boot_a.img` 为 header v4，记录样本路径、大小和哈希；不外推到当前运行 Boot 或未找到的审计样本。见[启动层](../boot/README.md)。
+- 直接复核 `lkm4ctr-debug-3.txt`，确认 `KernelSU: on_boot_completed!` 及两次 ksud 状态 0 退出；另记录模块自报初始化和 mqueue 错误，未据此认定完整兼容或长期稳定。见[模块研究](../modules/README.md)。
+- 未找到 `QRD8450_lkm4ctr_layout_audit.md`，部分字段与原厂内核指令交叉核对的结论尚不能复核；不根据摘要补造字段。即便部分一致，也不能证明整模块兼容或唯一定位延迟卡死原因。
+- [REFERENCES](../../REFERENCES.md)记录原始材料及检索缺口；[PUSH](../../PUSH.md)补充现有远程仓库的 clone 与日常提交推送方法。本轮未提交或推送。
