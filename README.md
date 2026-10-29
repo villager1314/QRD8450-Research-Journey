@@ -31,3 +31,7 @@ QRD8450（Qualcomm Waipio QRD）个人研究历程：记录设备探索、Androi
 [实验模板](docs/experiment-template.md) · [资料与归属](REFERENCES.md) · [本地使用与推送](PUSH.md)
 
 本仓库初版不包含固件、驱动二进制、设备密钥或可刷写 Recovery。补丁脚本严格限制为已核验的驱动文件；运行前阅读对应文档。
+
+## 历史证据补录
+
+已补录启动固件离线分析、Gunyah 配置、模块加载失败和 KernelSU 日志线索；TWRP 仍缺适配证据。[会话证据索引](docs/journal/history-evidence.md)列出来源、验证程度与云端核查限制。
